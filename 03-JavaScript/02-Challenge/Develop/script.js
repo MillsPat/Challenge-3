@@ -1,5 +1,4 @@
-
-     // Assignment Code
+// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 var passwordLength;
@@ -19,7 +18,6 @@ upperCase = lowerCase.map(toUpper);
 //--------------------------------------
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -32,19 +30,18 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Start Function
 function generatePassword() {
   // Ask four user Input
   passwordLength = prompt("Please choose a password length between 8 and 100 total characters");
   console.log("Password length " + passwordLength);
-  
+
   if(!passwordLength) {
     alert("Required value");
 
   } else if (passwordLength < 8 || passwordLength > 100) {
     passwordLength = prompt("Please choose a password length between 8 and 100 total characters");
     console.log("Password length " + passwordLength);
-  
+
   } else { 
     confirmLower = confirm("Would You Like lower case Letters In Your Password?");
     console.log("Lower case " + confirmLower);
@@ -127,7 +124,7 @@ function generatePassword() {
 
   // Empty variable for the password lenght
   var passwordBlank = [];
-  
+
   // Loop for random selection
   for (var i = 0; i < passwordLength; i++) {
     var allChoices = userChoices[Math.floor(Math.random() * userChoices.length)];
@@ -139,6 +136,5 @@ function generatePassword() {
   var password = passwordBlank.join("");
   console.log("Your Pasword is: " + password);
   return password;
-  
-}
 
+}
